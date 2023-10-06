@@ -1,0 +1,68 @@
+function setup() {
+  createCanvas(640, 480);
+  
+// Font Sizes and Rectangle Position|Size //
+  settingsSize = 40;
+  fontSize = 30;
+  posx = 175;
+  posy = 145;
+  sizex = 140;
+  sizey = 40;
+  
+  chooseFontText = 'Large';
+  
+  changeSizeButton = createButton('');
+  changeSizeButton.position(325,145);
+  changeSizeButton.size(40,40);
+  changeSizeButton.style('font-size', '30px');
+  changeSizeButton.style('font-family', 'Comic Sans MS');
+  
+  backButton = createButton('Return');
+  backButton.position(520,20);
+  backButton.size(100,45);
+  backButton.style('font-size', '20px');
+  backButton.style('font-family', 'Comic Sans MS');
+}
+
+function draw() {
+  background(100, 200, 250);
+  textSize(settingsSize);
+  textFont('Comic Sans MS');
+  text('Settings', 25, 55);
+  textSize(fontSize);
+  text('Font Size', 25, 175);
+
+  fill(239, 239, 239);
+  rect(posx,posy,sizex,sizey);
+  fill('black');
+  text(chooseFontText, posx + 10, 175);
+  
+  changeSizeButton.mousePressed(changeFontSize);
+  
+ 
+}
+
+function changeFontSize() {
+  if (chooseFontText == 'Large') {
+    chooseFontText = 'Medium';
+    settingsSize = 25;
+    fontSize = 20;
+    posx = posx - 15;
+    changeSizeButton.position(310, 145);
+  }
+  else if (chooseFontText == 'Medium') {
+    chooseFontText = 'Small';
+    settingsSize = 20;
+    fontSize = 15;
+    posx = posx - 15;
+    
+    changeSizeButton.position(300, 145);
+  }
+  else if (chooseFontText == 'Small') {
+    chooseFontText = 'Large';
+    settingsSize = 40;
+    fontSize = 30
+    posx = posx + 30;
+    changeSizeButton.position(325, 145);
+  }
+}
