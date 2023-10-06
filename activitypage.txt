@@ -1,0 +1,76 @@
+  var button;
+  var button2;
+  let img;
+  let img2;
+  let img3;
+
+function setup() {
+  createCanvas(1280, 720);
+  
+  //buttons
+  button = createImg('trace.png');
+  button.position(75, 250);
+  button.mousePressed(changeBG);
+  button.size (350, 300);
+
+  
+  button = createImg('match.png');
+  button.position(460, 250);
+  button.mousePressed(changeBG);
+  button.size (350, 300);
+  
+  button = createImg('puzzle.png');
+  button.position(850, 250);
+  button.mousePressed(changeBG);
+  button.size (350, 300);
+  
+  //back button
+  let col = color('orange');
+  button = createButton("Back")
+  button.size(200,50);
+  button.position (1000,50);
+  button.style('font-size', '30px');
+  button.style('background-color', col);
+  
+  // game image
+  img = loadImage('trace.png');
+  img2 = loadImage('match.png');
+  img3 = loadImage('puzzle.png');
+}
+
+function draw() {
+  background(100,200,250);
+
+  
+  //page title
+  textFont('comic sans ms');
+  textSize(60);
+  
+  text('Choose An Activity!', 375,200)
+  
+  // game name
+  textSize(35);
+  text('Tracing Game', 150,600)
+  text('Matching Game', 530,600)
+  text('Puzzle Game', 925,600)
+  
+  
+  // game images
+  image(img, 75, 250, 350, 300);
+  image(img2,460, 250, 350, 300);
+  image(img3,850, 250, 350, 300);
+  
+  
+}
+function changeBG() {
+  var val = random(255);
+  background(val);
+}
+function changeBG() {
+  var val = random(255);
+  background(val);
+}
+function changeBG() {
+  var val = random(255);
+  background(val);
+}
